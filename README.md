@@ -15,29 +15,25 @@ Here's some features we think we should add to the bot before release to make it
 - `c!arlo` ✔️
 - `c!dog` ✔️
 - `c!cat` ✔️
-- `c!uwu`
 
 ### Fun
 
 - `c!ship <person1> <person2>` ✔️
 - `c!trivia`
-- `c!pingmiqhtie` ✔️
-- `c!whathappenedtocommands` ✔️
 
 ### Utilities
 
 - `c!help`
-- `c!rank` ✔️
+- `c!link` ✔️
 - `c!ping` ✔️
 
 ### Info
 
+- `c!waitlist`
 - `c!applications`
 - `c!reqs`
 - `c!roles`
 - `c!socials` ✔️
-- `c!vouch`
-- `c!waitlist`
 
 ### Administrative
 
@@ -47,7 +43,7 @@ Here's some features we think we should add to the bot before release to make it
 
 1. Register a bot on [discord's developer website](https://discord.com/developers/applications)
 2. Create a fork of this repository and clone it
-3. Create a `.env` files in the root of the repository, input the correct fields from `example.env`
+3. Create a `.env` files in the rosot of the repository, input the correct fields from `example.env`
 4. Run `yarn --frozen-lockfile` to install the required npm packages
 5. Run `yarn dev` to start the bot
 6. Make sure to create a bug report in the form of a feature request before submitting any PR's for big new features
