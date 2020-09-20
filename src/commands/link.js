@@ -1,7 +1,7 @@
 const request = require('request');
 const role = require('../methods/role.js');
 
-const rank = (client, message) => {
+const link = (client, message) => {
   // Verify arguments
   if (!message.args[0]) {
     return message.channel.send('you gotta put your minecraft username as the argument');
@@ -152,4 +152,4 @@ const rank = (client, message) => {
   });
 };
 
-module.exports = rank;
+module.exports = link;
