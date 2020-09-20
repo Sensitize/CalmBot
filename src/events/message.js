@@ -29,6 +29,15 @@ const message = async (client, message) => {
     }
   }
 
+  // if (message.content === '@someone') {
+  //   // 1 in 10000 chance
+  //   if (Math.random() < 0.0001) {
+  //     message.channel.send('@everyone');
+  //   } else {
+  //     message.channel.send(`<@${message.guild.members.cache.random().id}>`);
+  //   }
+  // }
+
   // If you mention the bot, it will tell you its prefix
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
   if (message.content.match(prefixMention)) {
