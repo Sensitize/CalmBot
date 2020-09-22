@@ -20,10 +20,11 @@ Here's some features we think we should add to the bot before release to make it
 
 - `c!ship <person1> <person2>` ✔️
 - `c!factoid` ✔️
+- `c!trivia [difficulty]`
 
 ### Utilities
 
-- `c!help`
+- `c!help [command]`
 - `c!link` ✔️
 - `c!ping` ✔️
 

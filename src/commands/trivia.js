@@ -57,7 +57,7 @@ const trivia = (client, message) => {
       },
     };
 
-    message.channel.send({ embed }));
+    message.channel.send({ embed });
   });
 };
 

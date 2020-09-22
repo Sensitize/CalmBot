@@ -16,6 +16,12 @@ client.settings = {
 };
 
 (async () => {
+  // Features (functionality beyond commands)
+  client.features = {
+    countToChannel: false, // disabled because it needs to be reworked
+    mentionSomeone: false, // disabled because lmao
+  };
+
   // Event Loader
   const evtFiles = await readdir(path.join(__dirname, 'events'));
   console.log(`Loading a total of ${evtFiles.length} events.`);
