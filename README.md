@@ -19,7 +19,7 @@ Here's some features we think we should add to the bot before release to make it
 ### Fun
 
 - `c!ship <person1> <person2>` ✔️
-- `c!trivia`
+- `c!factoid` ✔️
 
 ### Utilities
 
@@ -30,10 +30,6 @@ Here's some features we think we should add to the bot before release to make it
 ### Info
 
 - `c!waitlist`
-- `c!applications`
-- `c!reqs`
-- `c!roles`
-- `c!socials` ✔️
 
 ### Administrative
 
