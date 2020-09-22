@@ -1,4 +1,4 @@
-const urls = require('../data/dog.json');
+const urls = require('../data/img/dog.json');
 
 const dog = (client, message) => {
   const img = urls[Math.floor(Math.random() * urls.length)];
