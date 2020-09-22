@@ -9,7 +9,7 @@ const Discord = require('discord.js');
 // promisified to use async/await to avoid callback hell
 const readdir = promisify(fs.readdir);
 
-const client = new Discord.Client({ disableEveryone: true });
+const client = new Discord.Client();
 
 client.settings = {
   prefix: 'c!',
