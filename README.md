@@ -31,6 +31,11 @@ Here's some features we think we should add to the bot before release to make it
 ### Info
 
 - `c!waitlist`
+- `c!application` ✔️
+- `c!vouch` ✔️
+- `c!reqs` ✔️
+- `c!socials` ✔️
+- `c!trial` ✔️
 
 ### Administrative
 
