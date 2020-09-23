@@ -4,14 +4,14 @@ const role = require('../methods/role.js');
 const link = (client, message) => {
   // Verify arguments
   if (!message.args[0]) {
-    return message.channel.send('you gotta put your minecraft username as the argument');
+    return message.channel.send('You have put your Minecraft username as the argument!');
   }
 
   const username = message.args[0];
 
   request({ json: true, url: `https://api.hypixel.net/player?key=${process.env.HYPIXEL_API_KEY}&name=${username}` }, (req, res, body) => {
     if (!body.success) {
-      return message.channel.send('The request has failed for some reason!');
+      return message.channel.send('The request has failed!');
     }
 
     if (body.player === null) {
@@ -20,7 +20,7 @@ const link = (client, message) => {
 
     // null propegation operator ensures it wont throw a referenceerror
     if (body?.player?.socialMedia?.links?.DISCORD !== message.author.tag) {
-      return message.channel.send(`You have to link your Discord account to Hypixel`);
+      return message.channel.send(`You have to link your Discord account to Hypixel.`);
     }
 
     const player = body.player;
