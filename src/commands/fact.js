@@ -1,6 +1,6 @@
 const request = require('request');
 
-const factoid = (client, message) => {
+const fact = (client, message) => {
   request({ json: true, url: 'https://uselessfacts.jsph.pl/random.json?language=en' }, (err, res, body) => {
     if (!body?.text) {
       message.channel.send('API error');
@@ -10,4 +10,4 @@ const factoid = (client, message) => {
   });
 };
 
-module.exports = factoid;
+module.exports = fact;

@@ -19,7 +19,7 @@ Here's some features we think we should add to the bot before release to make it
 ### Fun
 
 - `c!ship <person1> <person2>` ✔️
-- `c!factoid` ✔️
+- `c!fact` ✔️
 
 ### Utilities
 
@@ -37,10 +37,10 @@ Here's some features we think we should add to the bot before release to make it
 
 ## Contributing
 
-1. Register a bot on [discord's developer website](https://discord.com/developers/applications)
-2. Add the bot to a test guild that you don't care about.
+1. Register a bot on [Discord's developer website](https://discord.com/developers/applications)
+2. Add the bot to a test guild that you don't care about
 3. Create a fork of this repository and clone it
-4. Create a `.env` file in the root of the repository, input the correct fields from `example.env`
+4. Create a file named `.env` in the root of the repository, copy the contents of `example.env`, paste it into `.env`, and input the correct fields
 5. Run `yarn --frozen-lockfile` to install the required npm packages
 6. Run `yarn dev` to start the bot
 7. Make sure to create a bug report in the form of a feature request before submitting any PR's for new features to increase the chance of your PR getting accepted
