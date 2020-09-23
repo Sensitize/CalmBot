@@ -20,6 +20,7 @@ Here's some features we think we should add to the bot before release to make it
 
 - `c!ship <person1> <person2>` ✔️
 - `c!fact` ✔️
+- `c!rps` ✔️
 
 ### Utilities
 
