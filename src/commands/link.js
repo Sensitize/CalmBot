@@ -15,7 +15,7 @@ const link = (client, message) => {
     }
 
     if (body.player === null) {
-      return message.channel.send('That account doesnt exist!');
+      return message.channel.send('That account does not exist!');
     }
 
     // null propegation operator ensures it wont throw a referenceerror
