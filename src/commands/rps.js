@@ -4,6 +4,7 @@ const chooseArr = ["🗻", "📰", "✂"];
 
 const rps = async (client, message) => {
   // Function to react to message, check for author's reaction against a time limit
+  // (Async because otherwise it won't work properly D:)
   async function promptMessage(message, author, time, validReactions) {
     time *= 1000;
 
