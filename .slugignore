@@ -1,0 +1,7 @@
+.github/
+.gitignore
+.prettierrc.json
+.slugignore
+LICENSE
+README.md
+example.env

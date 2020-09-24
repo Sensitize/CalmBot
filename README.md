@@ -4,6 +4,7 @@ An open source discord bot created for the calm guild community discord server
 
 [![Discord](https://img.shields.io/discord/501501905508237312?style=flat-square)](https://discord.gg/calm)
 [![GitHub last commit](https://img.shields.io/github/last-commit/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/commits/master)
+[![GitHub issues](https://img.shields.io/github/issues/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/issues)
 [![GitHub](https://img.shields.io/github/license/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/blob/master/LICENSE)
 
 ## Roadmap
@@ -15,6 +16,7 @@ Here's some features we think we should add to the bot before release to make it
 - `c!arlo` ✔️
 - `c!dog` ✔️
 - `c!cat` ✔️
+- `c!cheems` ✔️
 
 ### Fun
 
@@ -31,6 +33,11 @@ Here's some features we think we should add to the bot before release to make it
 ### Info
 
 - `c!waitlist`
+- `c!application` ✔️
+- `c!vouch` ✔️
+- `c!reqs` ✔️
+- `c!socials` ✔️
+- `c!trial` ✔️
 
 ### Administrative
 
