@@ -16,6 +16,7 @@ Here's some features we think we should add to the bot before release to make it
 - `c!arlo` ✔️
 - `c!dog` ✔️
 - `c!cat` ✔️
+- `c!cheems` ✔️
 
 ### Fun
 
