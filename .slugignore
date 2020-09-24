@@ -1,0 +1,6 @@
+.github/
+.gitignore
+.slugignore
+LICENSE
+README.md
+example.env
