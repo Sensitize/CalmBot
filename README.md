@@ -4,7 +4,7 @@ An open source discord bot created for the calm guild community discord server
 
 [![Discord](https://img.shields.io/discord/501501905508237312?style=flat-square)](https://discord.gg/calm)
 [![GitHub last commit](https://img.shields.io/github/last-commit/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/commits/master)
-[![GitHub issues](https://img.shields.io/github/issues/CalmGuild/CalmBot)](https://github.com/CalmGuild/CalmBot/issues)
+[![GitHub issues](https://img.shields.io/github/issues/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/issues)
 [![GitHub](https://img.shields.io/github/license/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/blob/master/LICENSE)
 
 ## Roadmap
