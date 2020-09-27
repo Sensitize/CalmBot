@@ -58,7 +58,7 @@ const message = async (client, message) => {
   // If Bot is shutdown, return and do not execute command (unless command is to startup!)
   if (client.settings.shutdown) {
     if (message.content !== "c!startup" && message.content !== "c!shutdown") {
-      return message.reply("sorry bb am shut down");
+      return;
     }
   }
 
