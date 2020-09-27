@@ -40,7 +40,7 @@ Here's some features we think we should add to the bot before release to make it
 
 ### Administrative
 
-- `c!shutdown` ✔️
+- `c!sleep` ✔️
 - `c!startup` ✔️
 
 ## Contributing
