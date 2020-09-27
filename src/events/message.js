@@ -58,6 +58,13 @@ const message = async (client, message) => {
   // Puts args into the message object to avoid passing it again into the command function
   // It looks a bit cleaner without the extra argument in the cmd functions
   message.args = args;
+  
+  // If Bot is shutdown, return and do not execute command (unless command is to startup!)
+  if (client.settings.shutdown) {
+    if (message.content !== "c!startup" && message.content !== "c!sleep") {
+      return;
+    }
+  }
 
   // If the command entered is loaded, execute it, otherwise tell the user that the command wasn't
   if (client.commands[command]) {

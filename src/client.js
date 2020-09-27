@@ -12,8 +12,10 @@ const readdir = promisify(fs.readdir);
 const client = new Discord.Client();
 
 client.settings = {
-  prefix: 'c!',
+  prefix: "c!",
+  shutdown: false,  // c!shutdown and c!startup: modifies this value from true/false
 };
+
 
 (async () => {
   // Features (functionality beyond commands)

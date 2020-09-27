@@ -8,7 +8,6 @@ function getRole(message, rolename) {
     return message.guild.roles.cache.find((r) => r.id === id);
   } else {
     return message.guild.roles.cache.find((r) => r.name === rolename);
-  }
 }
 
 function setRole(message, rolename) {
@@ -118,22 +117,22 @@ async function link(client, message) {
         setRole(message, 'Network Level 35');
       }
 
-      // applies the ap role
-      if (ap >= 17000) {
-        setRole(message, '17k AP');
-      } else if (ap >= 14000) {
-        setRole(message, '14k AP');
-      } else if (ap >= 11000) {
-        setRole(message, '11k AP');
-      } else if (ap >= 8000) {
-        setRole(message, '8k AP');
-      } else if (ap >= 5000) {
-        setRole(message, '5k AP');
-      } else if (ap >= 2000) {
-        setRole(message, '2k AP');
-      } else if (ap >= 1000) {
-        setRole(message, '1k AP');
-      }
+      // // applies the ap role
+      // if (ap >= 17000) {
+      //   setRole(message, '17k AP');
+      // } else if (ap >= 14000) {
+      //   setRole(message, '14k AP');
+      // } else if (ap >= 11000) {
+      //   setRole(message, '11k AP');
+      // } else if (ap >= 8000) {
+      //   setRole(message, '8k AP');
+      // } else if (ap >= 5000) {
+      //   setRole(message, '5k AP');
+      // } else if (ap >= 2000) {
+      //   setRole(message, '2k AP');
+      // } else if (ap >= 1000) {
+      //   setRole(message, '1k AP');
+      // }
 
       message.channel.send('Account successfuly linked!');
     }

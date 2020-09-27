@@ -53,11 +53,16 @@ const trivia = (client, message) => {
         },
       ],
       footer: {
-        text: `${message.author.username}, answer the question by typing the letter of the correct answer in chat`,
+        text: `${message.author.username}, answer the question by reacting to the correct answer. \u000AYou have 30 seconds to answer.`,
       },
     };
 
-    message.channel.send({ embed });
+    message.channel.send({ embed }).then(sentEmbed => {
+      sentEmbed.react("🇦")
+      sentEmbed.react("🇧")
+      sentEmbed.react("🇨")
+      sentEmbed.react("🇩")
+    });
   });
 };
 
