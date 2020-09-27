@@ -12,17 +12,17 @@ const readdir = promisify(fs.readdir);
 const client = new Discord.Client();
 
 client.settings = {
-  prefix: "c!",
-  shutdown: false,  // c!shutdown and c!startup: modifies this value from true/false
+  prefix: 'c!',
+  shutdown: false, // c!shutdown and c!startup: modifies this value from true/false
 };
 
+client.features = {
+  countToChannel: true, // disabled because it needs to be reworked
+  mentionSomeone: false, // disabled because lmao
+};
 
 (async () => {
   // Features (functionality beyond commands)
-  client.features = {
-    countToChannel: false, // disabled because it needs to be reworked
-    mentionSomeone: false, // disabled because lmao
-  };
 
   // Event Loader
   const evtFiles = await readdir(path.join(__dirname, 'events'));
