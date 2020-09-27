@@ -6,37 +6,41 @@ const message = async (client, message) => {
   if (message.author.bot) return;
   if (!message.guild) return;
 
-  // #count-to-x channel code so invalid numbers are deleted and channel name is updated
-  if (message.channel.name.startsWith('count-to-')) {
-    const messageList = await message.channel.messages.fetch({ limit: 2 });
-    const previousMessage = messageList.last();
-    const previousCount = parseInt(previousMessage.content, 10);
-    const currentCount = parseInt(message.content, 10);
+  if (client.features.countToChannel) {
+    // #count-to-x channel code so invalid numbers are deleted and channel name is updated
+    if (message.channel.name.startsWith('count-to-')) {
+      const messageList = await message.channel.messages.fetch({ limit: 2 });
+      const previousMessage = messageList.last();
+      const previousCount = parseInt(previousMessage.content, 10);
+      const currentCount = parseInt(message.content, 10);
 
-    // Makes sure user does not send message twice in a row
-    if (message.author.tag === previousMessage.author.tag) {
-      return message.delete();
-    }
+      // Makes sure user does not send message twice in a row
+      if (message.author.tag === previousMessage.author.tag) {
+        return message.delete();
+      }
 
-    // Checks if it is correct number OR if the message is not a number at all
-    if (currentCount != previousCount + 1) {
-      return message.delete();
-    }
+      // Checks if it is correct number OR if the message is not a number at all
+      if (currentCount != previousCount + 1) {
+        return message.delete();
+      }
 
-    // Checks if count is divisible by 1000, if so changes the channel name to #count-to-(current count + 1000)
-    if (currentCount % 1000 === 0) {
-      return message.channel.setName(`count-to-${Math.floor((currentCount + 1000) / 1000)}k`);
+      // Checks if count is divisible by 1000, if so changes the channel name to #count-to-(current count + 1000)
+      if (currentCount % 1000 === 0) {
+        return message.channel.setName(`count-to-${Math.floor((currentCount + 1000) / 1000)}k`);
+      }
     }
   }
 
-  // if (message.content === '@someone') {
-  //   // 1 in 10000 chance
-  //   if (Math.random() < 0.0001) {
-  //     message.channel.send('@everyone');
-  //   } else {
-  //     message.channel.send(`<@${message.guild.members.cache.random().id}>`);
-  //   }
-  // }
+  if (client.features.mentionSomeone) {
+    if (message.content === '@someone') {
+      // 1 in 10000 chance
+      if (Math.random() < 0.0001) {
+        message.channel.send('@everyone');
+      } else {
+        message.channel.send(`<@${message.guild.members.cache.random().id}>`);
+      }
+    }
+  }
 
   // If you mention the bot, it will tell you its prefix
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);

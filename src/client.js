@@ -9,7 +9,7 @@ const Discord = require('discord.js');
 // promisified to use async/await to avoid callback hell
 const readdir = promisify(fs.readdir);
 
-const client = new Discord.Client({ disableEveryone: true });
+const client = new Discord.Client();
 
 client.settings = {
   prefix: "c!",
@@ -18,6 +18,12 @@ client.settings = {
 
 
 (async () => {
+  // Features (functionality beyond commands)
+  client.features = {
+    countToChannel: false, // disabled because it needs to be reworked
+    mentionSomeone: false, // disabled because lmao
+  };
+
   // Event Loader
   const evtFiles = await readdir(path.join(__dirname, 'events'));
   console.log(`Loading a total of ${evtFiles.length} events.`);
