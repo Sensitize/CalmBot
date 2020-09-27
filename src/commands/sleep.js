@@ -8,7 +8,7 @@ const shutdown = (client, message) => {
       client.settings.shutdown = true;
       message.reply("Bot is shutting down!");
     } else {
-      message.reply("Bot is shutdown, please do c!startup to start it up again.");
+      message.reply("Bot is in sleep mode, please do c!startup to start it up again.");
     }
   }
 };
