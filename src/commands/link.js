@@ -1,5 +1,5 @@
 const { getPlayer } = require('../requests/hypixel.js');
-const calmRoles = require('../data/calm/roles.json');
+const roles = require('../data/calm/roles.json');
 
 function getRole(message, rolename) {
   let role;
@@ -8,6 +8,7 @@ function getRole(message, rolename) {
     return message.guild.roles.cache.find((r) => r.id === id);
   } else {
     return message.guild.roles.cache.find((r) => r.name === rolename);
+  }
 }
 
 function setRole(message, rolename) {
