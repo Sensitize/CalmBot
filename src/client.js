@@ -17,8 +17,9 @@ client.settings = {
 };
 
 client.features = {
-  countToChannel: true, // disabled because it needs to be reworked
+  countToChannel: true,
   mentionSomeone: false, // disabled because lmao
+  guildChat: true,
 };
 
 (async () => {

@@ -1,6 +1,8 @@
 const fs = require('fs');
 const path = require('path');
 
+const { sendChatMessage } = require('../requests/calm.js');
+
 const message = async (client, message) => {
   // Prevent bot from responding to other bots and outside of a guild
   if (message.author.bot) return;
@@ -42,6 +44,18 @@ const message = async (client, message) => {
     }
   }
 
+  if (client.features.guildChat) {
+    if (message.channel.name === 'guild-chat-log') {
+      sendChatMessage(message.content, (err, msg) => {
+        if (err) {
+          message.channel.send(err);
+        } else {
+          message.channel.send(`CalmBot sent message: \`${message.content}\``);
+        }
+      });
+    }
+  }
+
   // If you mention the bot, it will tell you its prefix
   const prefixMention = new RegExp(`^<@!?${client.user.id}>( |)$`);
   if (message.content.match(prefixMention)) {
@@ -58,10 +72,10 @@ const message = async (client, message) => {
   // Puts args into the message object to avoid passing it again into the command function
   // It looks a bit cleaner without the extra argument in the cmd functions
   message.args = args;
-  
+
   // If Bot is shutdown, return and do not execute command (unless command is to startup!)
   if (client.settings.shutdown) {
-    if (message.content !== "c!startup" && message.content !== "c!sleep") {
+    if (message.content !== 'c!startup' && message.content !== 'c!sleep') {
       return;
     }
   }
