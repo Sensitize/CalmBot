@@ -30,10 +30,10 @@ module.exports = class ShipCommand extends Command {
       combined = person1.username + person2.username;
     } else {
       combined = person2.username + person1.username;
-    };
+    }
 
     const date = new Date().getDate().toString();
     const rng = Math.floor(seedrandom(combined + date).quick() * 100);
     message.say(`\`${person1.username}\` and \`${person2.username}\` are **${rng}%** compatible!`);
   }
-}
+};

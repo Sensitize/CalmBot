@@ -14,11 +14,11 @@ module.exports = class FactCommand extends Command {
 
   run(message) {
     randomFact((err, fact) => {
-      if(err) {
+      if (err) {
         console.error(err);
       } else {
         message.say(`**FACT:** ${fact}`);
       }
     });
   }
-}
+};

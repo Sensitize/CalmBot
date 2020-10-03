@@ -20,4 +20,4 @@ module.exports = class ApplicationCommand extends Command {
       '**APPLICATION:** <https://forms.gle/tLkAkPJ8qEuCFVe16>';
     message.say(send);
   }
-}
+};

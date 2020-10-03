@@ -5,10 +5,10 @@ module.exports = async function randomFact(cb = () => {}) {
   request({ json: true, url }, (err, res, body) => {
     if (err) {
       cb(err, null);
-    } else if(!body.text) {
+    } else if (!body.text) {
       cb('API error', null);
     } else {
       cb(null, body.text.replace(/`/g, "'"));
-    };
+    }
   });
-}
+};

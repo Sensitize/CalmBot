@@ -17,9 +17,9 @@ module.exports = class TriviaCommand extends Command {
           default: '',
           validate: (text) => {
             return !!['easy', 'medium', 'hard'].includes(text.toLowerCase());
-          }
-        }
-      ]
+          },
+        },
+      ],
     });
   }
 
@@ -51,13 +51,13 @@ module.exports = class TriviaCommand extends Command {
           },
         };
 
-        message.channel.send({embed}).then((sentEmbed) => {
+        message.channel.send({ embed }).then((sentEmbed) => {
           sentEmbed.react('🇦');
           sentEmbed.react('🇧');
           sentEmbed.react('🇨');
           sentEmbed.react('🇩');
         });
-      };
+      }
     });
   }
-}
+};

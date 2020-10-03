@@ -22,4 +22,4 @@ module.exports = class VouchCommand extends Command {
       `*If you have any questions, please do \`t!open\` in ${commandsChannel} to open a ticket and talk to staff*`;
     message.say(send);
   }
-}
+};

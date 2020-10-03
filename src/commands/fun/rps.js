@@ -1,8 +1,8 @@
 const { Command } = require('discord.js-commando');
-const { MessageEmbed } = require("discord.js");
+const { MessageEmbed } = require('discord.js');
 
 // Emoji's for bot to choose from for rock-paper-scissors
-const chooseArr = ["🗻", "📰", "✂"];
+const chooseArr = ['🗻', '📰', '✂'];
 
 module.exports = class RPSCommand extends Command {
   constructor(client) {
@@ -51,4 +51,4 @@ module.exports = class RPSCommand extends Command {
     embed.setDescription('').addField(result, `${reaction} vs ${botChoice}`);
     sentEmbed.edit(embed);
   }
-}
+};

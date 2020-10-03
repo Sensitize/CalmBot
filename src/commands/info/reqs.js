@@ -21,4 +21,4 @@ module.exports = class ReqsCommand extends Command {
 
     message.say(send);
   }
-}
+};

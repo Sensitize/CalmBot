@@ -14,11 +14,11 @@ module.exports = class LinkCommand extends Command {
         {
           key: 'ign',
           prompt: 'Please enter your minecraft ign',
-          type: 'string'
-        }
-      ]
+          type: 'string',
+        },
+      ],
     });
-  };
+  }
 
   async run(message, { ign }) {
     function getRole(message, rolename) {
@@ -158,4 +158,4 @@ module.exports = class LinkCommand extends Command {
       }
     });
   }
-}
+};

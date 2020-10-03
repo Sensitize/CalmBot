@@ -23,4 +23,4 @@ module.exports = class SleepCommand extends Command {
     });
     message.say('All commands disabled!');
   }
-}
+};

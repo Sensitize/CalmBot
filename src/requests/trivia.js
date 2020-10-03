@@ -44,4 +44,4 @@ module.exports = async function trivia(difficulty, cb) {
       cb(null, { category, question, difficulty, answers, correct });
     }
   });
-}
+};

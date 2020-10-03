@@ -12,7 +12,7 @@ module.exports = class RolesCommand extends Command {
   }
 
   async run(message) {
-    const selfRolesChannel = message.guild.channels.cache.find(channel => channel.name === "self-assign-roles").toString();
-    message.say(`You want some more roles? Go give yourself some in ${selfRolesChannel}!! <3`)
+    const selfRolesChannel = message.guild.channels.cache.find((channel) => channel.name === 'self-assign-roles').toString();
+    message.say(`You want some more roles? Go give yourself some in ${selfRolesChannel}!! <3`);
   }
-}
+};
