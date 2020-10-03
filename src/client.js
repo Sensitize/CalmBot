@@ -3,61 +3,40 @@ if (process.env.NODE_ENV !== 'production') require('dotenv').config();
 
 const fs = require('fs');
 const path = require('path');
-const { promisify } = require('util');
-const Discord = require('discord.js');
+const { CommandoClient } = require('discord.js-commando');
 
-// promisified to use async/await to avoid callback hell
-const readdir = promisify(fs.readdir);
+const client = new CommandoClient({
+  commandPrefix: 'c!',
+  owner: ['438057670042320896', '272172704243908609'],
+});
 
-const client = new Discord.Client();
+const evtFiles = fs.readdirSync(path.join(__dirname, 'events'));
+console.log(`Loading a total of ${evtFiles.length} events.`);
 
-client.settings = {
-  prefix: 'c!',
-  shutdown: false, // c!shutdown and c!startup: modifies this value from true/false
-};
+evtFiles.forEach((file, i) => {
+  if (!file.endsWith('.js')) return;
 
-client.features = {
-  countToChannel: true,
-  mentionSomeone: false, // disabled because lmao
-  guildChat: true,
-};
+  const evtName = file.split('.')[0];
+  const evt = require('./events/' + file);
 
-(async () => {
-  // Features (functionality beyond commands)
+  // Loads evt
+  client.on(evtName, (...args) => {
+    evt(client, ...args);
+  });
+});
 
-  // Event Loader
-  const evtFiles = await readdir(path.join(__dirname, 'events'));
-  console.log(`Loading a total of ${evtFiles.length} events.`);
-
-  // Loops through ./events folder's files
-  evtFiles.forEach((file) => {
-    if (!file.endsWith('.js')) return;
-
-    const evtName = file.split('.')[0];
-    const evt = require('./events/' + file);
-
-    // Loads evt
-    client.on(evtName, (...args) => {
-      evt(client, ...args);
-    });
+client.registry
+  .registerDefaultTypes()
+  .registerGroups([
+    ['img', 'Image Commands'],
+    ['fun', 'Fun Commands'],
+    ['util', 'Utility Commands'],
+    ['info', 'Info Commands'],
+    ['admin', 'Admin Commands'],
+  ])
+  .registerCommandsIn({
+    filter: /^([^.].*)\.js$/,
+    dirname: path.join(__dirname, 'commands'),
   });
 
-  // Command Loader
-  const cmdFiles = await readdir(path.join(__dirname, 'commands'));
-  console.log(`Loading a total of ${cmdFiles.length} commands.`);
-
-  client.commands = {};
-
-  // Loops through ./commands folder's files
-  cmdFiles.forEach((file) => {
-    if (!file.endsWith('.js')) return;
-
-    const cmdName = file.split('.')[0];
-
-    // Loads each command function in ./commands into memory that can be accessed from the client object.
-    client.commands[cmdName] = require(`./commands/${file}`);
-  });
-
-  // Login
-  client.login(process.env.DISCORD_TOKEN);
-})();
+client.login(process.env.BOT_TOKEN);
