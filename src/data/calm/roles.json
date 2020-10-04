@@ -1,190 +1,66 @@
-[
-  {
-    "name": "Hypixel Staff",
-    "id": "501533270014689281"
+{
+  "guild": {
+    "Staff Team": "626858736287350784",
+    "Inactive": "591346583501668358",
+    "Risks kick": "737401152643137608",
+    "Waitlist": "593498585581092864",
+    "Denied": "758824489022128160"
   },
-  {
-    "name": "Hypixel Moderator",
-    "id": "737077437896065214"
+  "rank": {
+    "Hypixel Staff": "737077437896065214",
+    "Hypixel Moderator": "737077437896065214",
+    "Hypixel Helper": "737077434523844739",
+    "Hypixel Youtuber": "553318422608347146",
+    "Hypixel MVP++": "555138510479163393",
+    "Hypixel MVP+": "555138509229260805",
+    "Hypixel MVP": "555138508881395729",
+    "Hypixel VIP+": "555138508055117834",
+    "Hypixel VIP": "554849904350986264"
   },
-  {
-    "name": "Hypixel Helper",
-    "id": "737077434523844739"
+  "network": {
+    "Network Level 250": "554849903247884290",
+    "Network Level 200": "554849901767426048",
+    "Network Level 150": "554849901767426048",
+    "Network Level 95": "554849886735171594",
+    "Network Level 85": "554849886433181721",
+    "Network Level 75": "554849885950836747",
+    "Network Level 65": "554849883631386665",
+    "Network Level 55": "554849883631386665",
+    "Network Level 45": "554849882960035850",
+    "Network Level 35": "554849881861128224"
   },
-  {
-    "name": "Hypixel Youtuber",
-    "id": ""
+  "ap": {
+    "17k AP": "555138963094896690",
+    "14k AP": "555138962180800512",
+    "11k AP": "555138961568432149",
+    "8k AP": "555138960662462465",
+    "5k AP": "555138512983162893",
+    "2k AP": "555138511959883778",
+    "1k AP": "555138511603367937"
   },
-  {
-    "name": "Hypixel MVP++",
-    "id": "555138510479163393"
+  "skywars": {
+    "Skywars Mystic": "755944646592430121",
+    "Skywars Rainbow": "755944589197574254",
+    "Skywars Amethyst": "755944527482847313",
+    "Skywars Opal": "755944474047283250",
+    "Skywars Crystal": "755944265716203551",
+    "Skywars Ruby": "755944327901085826",
+    "Skywars Sapphire": "755944164688134227",
+    "Skywars Emerald": "755944124053717022",
+    "Skywars Diamond": "755944011012767824",
+    "Skywars Gold": "755943998824120351",
+    "Skywars Iron": "755943909942886491"
   },
-  {
-    "name": "Hypixel MVP+",
-    "id": "555138509229260805"
-  },
-  {
-    "name": "Hypixel MVP",
-    "id": "555138508881395729"
-  },
-  {
-    "name": "Hypixel VIP+",
-    "id": "555138508055117834"
-  },
-  {
-    "name": "Hypixel VIP",
-    "id": "554849904350986264"
-  },
-  {
-    "name": "Network Level 35",
-    "id": "554849881861128224"
-  },
-  {
-    "name": "Network Level 45",
-    "id": "554849882960035850"
-  },
-  {
-    "name": "Network Level 55",
-    "id": "554849883631386665"
-  },
-  {
-    "name": "Network Level 65",
-    "id": "554849883631386665"
-  },
-  {
-    "name": "Network Level 75",
-    "id": "554849885950836747"
-  },
-  {
-    "name": "Network Level 85",
-    "id": "554849886433181721"
-  },
-  {
-    "name": "Network Level 95",
-    "id": "554849886735171594"
-  },
-  {
-    "name": "Network Level 150",
-    "id": "554849901767426048"
-  },
-  {
-    "name": "Network Level 200",
-    "id": "554849901767426048"
-  },
-  {
-    "name": "Network Level 250",
-    "id": "554849903247884290"
-  },
-  {
-    "name": "1k AP",
-    "id": ""
-  },
-  {
-    "name": "2k AP",
-    "id": ""
-  },
-  {
-    "name": "5k AP",
-    "id": ""
-  },
-  {
-    "name": "8k AP",
-    "id": ""
-  },
-  {
-    "name": "11k AP",
-    "id": ""
-  },
-  {
-    "name": "14k AP",
-    "id": ""
-  },
-  {
-    "name": "17K AP",
-    "id": ""
-  },
-  {
-    "name": "Skywars Iron Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Gold Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Diamond Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Emerald Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Sapphire Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Ruby Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Crystal Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Opal Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Amethyst Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Rainbow Prestige",
-    "id": ""
-  },
-  {
-    "name": "Skywars Mystic Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Iron Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Gold Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Diamond Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Emerald Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Sapphire Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Ruby Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Crystal Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Opal Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Amethyst Prestige",
-    "id": ""
-  },
-  {
-    "name": "Bedwars Rainbow Prestige",
-    "id": ""
+  "bedwars": {
+    "Bedwars Rainbow": "755996386465415199",
+    "Bedwars Amethyst": "755996391813152788",
+    "Bedwars Opal": "755996389137317929",
+    "Bedwars Crystal": "755996378135789588",
+    "Bedwars Ruby": "755996383902695434",
+    "Bedwars Sapphire": "755996380446588979",
+    "Bedwars Emerald": "755996371462389840",
+    "Bedwars Diamond": "755996375249846404",
+    "Bedwars Gold": "755996358686539857",
+    "Bedwars Iron": "755996140662554651"
   }
-]
+}
