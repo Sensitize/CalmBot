@@ -8,6 +8,7 @@
   },
   "dependencies": {
     "discord.js": "^12.3.1",
+    "discord.js-commando": "git+https://github.com/discordjs/Commando.git",
     "dotenv": "^8.2.0",
     "request": "^2.88.2",
     "seedrandom": "^3.0.5"
