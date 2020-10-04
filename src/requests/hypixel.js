@@ -1,6 +1,6 @@
 const request = require('request');
 
-async function getPlayer(name, cb) {
+module.exports.getPlayer = async function getPlayer(name, cb) {
   if (typeof name !== 'string') {
     cb('please provide a name', null);
   } else {
@@ -17,6 +17,4 @@ async function getPlayer(name, cb) {
       }
     });
   }
-}
-
-module.exports = { getPlayer };
+};

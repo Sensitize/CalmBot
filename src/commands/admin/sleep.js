@@ -8,6 +8,7 @@ module.exports = class SleepCommand extends Command {
       memberName: 'sleep',
       description: 'Makes the bot go to sleep',
       examples: [`${client.commandPrefix}sleep`],
+      guildOnly: true,
     });
   }
 

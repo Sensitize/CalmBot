@@ -8,6 +8,7 @@ module.exports = class StartupCommand extends Command {
       memberName: 'startup',
       description: 'Wakes up the bot',
       examples: [`${client.commandPrefix}sleep`],
+      guildOnly: true,
     });
   }
 

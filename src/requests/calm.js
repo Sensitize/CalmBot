@@ -1,6 +1,6 @@
 const request = require('request');
 
-function sendChatMessage(message, cb) {
+module.exports.sendChatMessage = async function sendChatMessage(message, cb) {
   if (typeof message !== 'string') {
     cb('message doesnt exist', null);
   } else {
@@ -14,6 +14,4 @@ function sendChatMessage(message, cb) {
       }
     });
   }
-}
-
-module.exports = { sendChatMessage };
+};
