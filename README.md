@@ -7,43 +7,6 @@ An open source discord bot created for the calm guild community discord server
 [![GitHub issues](https://img.shields.io/github/issues/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/issues)
 [![GitHub](https://img.shields.io/github/license/CalmGuild/CalmBot?style=flat-square)](https://github.com/CalmGuild/CalmBot/blob/master/LICENSE)
 
-## Roadmap
-
-Here's some features we think we should add to the bot before release to make it more useful
-
-### Image Related
-
-- `c!arlo` ✔️
-- `c!dog` ✔️
-- `c!cat` ✔️
-
-### Fun
-
-- `c!ship <person1> <person2>` ✔️
-- `c!fact` ✔️
-- `c!trivia [difficulty]`
-- `c!rps` ✔️
-
-### Utilities
-
-- `c!help [command]`
-- `c!link` ✔️
-- `c!ping` ✔️
-
-### Info
-
-- `c!waitlist`
-- `c!application` ✔️
-- `c!vouch` ✔️
-- `c!reqs` ✔️
-- `c!socials` ✔️
-- `c!trial` ✔️
-
-### Administrative
-
-- `c!sleep` ✔️
-- `c!startup` ✔️
-
 ## Contributing
 
 1. Register a bot on [Discord's developer website](https://discord.com/developers/applications)
