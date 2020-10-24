@@ -2,6 +2,7 @@ const { Command } = require('discord.js-commando');
 const { getPlayer } = require('../../requests/hypixel.js');
 const roles = require('../../data/calm/roles.json');
 const { removeRole, setRole } = require('../../requests/role.js');
+const role = require('../../requests/role.js');
 
 module.exports = class LinkCommand extends Command {
   constructor(client) {
@@ -60,20 +61,18 @@ module.exports = class LinkCommand extends Command {
           rank = 'NON';
         }
 
-        // remove existing roles
-        for (const category in roles) {
-          if (category === 'guild') continue;
-          for (const role in roles[category]) {
-            removeRole(message, role);
-          }
-        }
+        const member = message.member;
+
+
+        member.roles.cache.each((role) => {
+            member.roles.remove(role);
+        });
 
         // calculates player's network level from network exp
         const exp = player.networkExp;
         const BASE = 10000;
         const GROWTH = 2500;
-        const HALF_GROWTH = 0.5 * GROWTH;
-        const REVERSE_PQ_PREFIX = -(BASE - 0.5 * GROWTH) / GROWTH;
+        const REVERSE_PQ_PREFIX = (BASE - 0.5 * GROWTH) / GROWTH;
         const REVERSE_CONST = REVERSE_PQ_PREFIX * REVERSE_PQ_PREFIX;
         const GROWTH_DIVIDES_2 = 2 / GROWTH;
         const networkLevel = Math.floor(1 + REVERSE_PQ_PREFIX + Math.sqrt(REVERSE_CONST + GROWTH_DIVIDES_2 * exp));
@@ -87,124 +86,122 @@ module.exports = class LinkCommand extends Command {
         const bwPrestige = Math.floor(experience / BEDWARS_EXP_PER_PRESTIGE);
 
         // gets sw Level
-        console.log(player?.stats?.SkyWars?.skywars_experience);
         const swLevel = Math.floor(getSwLevel(player?.stats?.SkyWars?.skywars_experience));
-        console.log(swLevel);
-
+        
         // applies the rank role
         if (rank === 'ADMIN') {
-          setRole(message, 'Hypixel Staff');
+          setRole(member, "RANK", "HYPIXEL_STAFF");
           // not a role in calm guild for some reason
-          // setRole(message, 'rank', 'Hypixel Admin');
+          // setRole(member, 'RANK', 'Hypixel Admin');
         } else if (rank === 'MODERATOR') {
-          setRole(message, 'Hypixel Staff');
-          setRole(message, 'Hypixel Moderator');
+          setRole(member, "RANK", "HYPIXEL_STAFF");
+          setRole(member, "RANK", "HYPIXEL_MODERATOR");
         } else if (rank === 'HELPER') {
-          setRole(message, 'Hypixel Staff');
-          setRole(message, 'Hypixel Helper');
+          setRole(member, "RANK", "HYPIXEL_STAFF");
+          setRole(member, "RANK", "HYPIXEL_HELPER");
         } else if (rank === 'YOUTUBER') {
-          setRole(message, 'Hypixel Youtuber');
+          setRole(member, "RANK", "HYPIXEL_YOUTUBER");
         } else if (rank === 'SUPERSTAR') {
-          setRole(message, 'Hypixel MVP++');
+          setRole(member, "RANK", "HYPIXEL_MVP++");
         } else if (rank === 'MVP_PLUS') {
-          setRole(message, 'Hypixel MVP+');
+          setRole(member, "RANK", "HYPIXEL_MVP+");
         } else if (rank === 'MVP') {
-          setRole(message, 'Hypixel MVP');
+          setRole(member, "RANK", "HYPIXEL_MVP");
         } else if (rank === 'VIP_PLUS') {
-          setRole(message, 'Hypixel VIP+');
+          setRole(member, "RANK", "HYPIXEL_VIP+");
         } else if (rank === 'VIP') {
-          setRole(message, 'Hypixel VIP');
+          setRole(member, "RANK", "HYPIXEL_VIP");
         }
 
         // applies the network level role
         if (networkLevel >= 250) {
-          setRole(message, 'Network Level 250');
+          setRole(member, "NETWORK", "250");
         } else if (networkLevel >= 200) {
-          setRole(message, 'Network Level 200');
+          setRole(member, "NETWORK", "200");
         } else if (networkLevel >= 150) {
-          setRole(message, 'Network Level 150');
+          setRole(member, "NETWORK", "150");
         } else if (networkLevel >= 95) {
-          setRole(message, 'Network Level 95');
+          setRole(member, "NETWORK", "95");
         } else if (networkLevel >= 85) {
-          setRole(message, 'Network Level 85');
+          setRole(member, "NETWORK", "85");
         } else if (networkLevel >= 75) {
-          setRole(message, 'Network Level 75');
+          setRole(member, "NETWORK", "75");
         } else if (networkLevel >= 65) {
-          setRole(message, 'Network Level 65');
+          setRole(member, "NETWORK", "65");
         } else if (networkLevel >= 55) {
-          setRole(message, 'Network Level 55');
+          setRole(member, "NETWORK", "55");
         } else if (networkLevel >= 45) {
-          setRole(message, 'Network Level 45');
+          setRole(member, "NETWORK", "45");
         } else if (networkLevel >= 35) {
-          setRole(message, 'Network Level 35');
+          setRole(member, "NETWORK", "35");
         }
 
         // applies the ap role
         if (ap >= 17000) {
-          setRole(message, '17k AP');
+          setRole(member, "AP", "17K");
         } else if (ap >= 14000) {
-          setRole(message, '14k AP');
+          setRole(member, "AP", "14K");
         } else if (ap >= 11000) {
-          setRole(message, '11k AP');
+          setRole(member, "AP", "11K");
         } else if (ap >= 8000) {
-          setRole(message, '8k AP');
+          setRole(member, "AP", "8K");
         } else if (ap >= 5000) {
-          setRole(message, '5k AP');
+          setRole(member, "AP", "5K");
         } else if (ap >= 2000) {
-          setRole(message, '2k AP');
+          setRole(member, "AP", "2K");
         } else if (ap >= 1000) {
-          setRole(message, '1k AP');
+          setRole(member, "AP", "1K");
         }
 
         // applies bedwars prestige role
         if (bwPrestige === 10) {
-          setRole(message, 'Bedwars Rainbow');
+          setRole(member, "BW", "RAINBOW");
         } else if (bwPrestige === 9) {
-          setRole(message, 'Bedwars Amethyst');
+          setRole(member, "BW", "AMETHYST");
         } else if (bwPrestige === 8) {
-          setRole(message, 'Bedwars Opal');
+          setRole(member, "BW", "OPAL");
         } else if (bwPrestige === 7) {
-          setRole(message, 'Bedwars Crystal');
+          setRole(member, "BW", "CRYSTAL");
         } else if (bwPrestige === 6) {
-          setRole(message, 'Bedwars Ruby');
+          setRole(member, "BW", "RUBY");
         } else if (bwPrestige === 5) {
-          setRole(message, 'Bedwars Sapphire');
+          setRole(member, "BW", "SAPPHIRE");
         } else if (bwPrestige === 4) {
-          setRole(message, 'Bedwars Emerald');
+          setRole(gumemberild, "BW", "EMERALD");
         } else if (bwPrestige === 3) {
-          setRole(message, 'Bedwars Diamond');
+          setRole(member, "BW", "DIAMOND");
         } else if (bwPrestige === 2) {
-          setRole(message, 'Bedwars Gold');
+          setRole(member, "BW", "GOLD");
         } else if (bwPrestige === 1) {
-          setRole(message, 'Bedwars Iron');
+          setRole(member, "BW", "IRON");
         }
 
         // applies skywars prestge role
         if (swLevel >= 100) {
-          setRole(message, 'Skywars Mystic');
+          setRole(member, "SW", "MYSTIC");
         } else if (swLevel >= 50) {
-          setRole(message, 'Skywars Rainbow');
+          setRole(member, "SW", "RAINBOW");
         } else if (swLevel >= 45) {
-          setRole(message, 'Skywars Amethyst');
+          setRole(member, "SW", "AMETHYST");
         } else if (swLevel >= 40) {
-          setRole(message, 'Skywars Opal');
+          setRole(member, "SW", "OPAL");
         } else if (swLevel >= 35) {
-          setRole(message, 'Skywars Crystal');
+          setRole(member, "SW", "CRYSTAL");
         } else if (swLevel >= 30) {
-          setRole(message, 'Skywars Ruby');
+          setRole(member, "SW", "RUBY");
         } else if (swLevel >= 25) {
-          setRole(message, 'Skywars Sapphire');
+          setRole(member, "SW", "SAPPHIRE");
         } else if (swLevel >= 20) {
-          setRole(message, 'Skywars Emerald');
+          setRole(member, "SW", "EMERALD");
         } else if (swLevel >= 15) {
-          setRole(message, 'Skywars Diamond');
+          setRole(member, "SW", "DIAMOND");
         } else if (swLevel >= 10) {
-          setRole(message, 'Skywars Gold');
+          setRole(member, "SW", "GOLD");
         } else if (swLevel >= 5) {
-          setRole(message, 'Skywars Iron');
+          setRole(member, "SW", "IRON");
         }
 
-        message.channel.send('Account successfuly linked!');
+        message.say('Account successfuly linked!');
       }
     });
   }
