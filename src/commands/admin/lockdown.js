@@ -7,7 +7,7 @@ module.exports = class LockdownCommand extends Command {
       name: 'lockdown',
       group: 'admin',
       memberName: 'lockdown',
-      description: 'ryan was here',
+      description: 'Disables chat for everyone until unlocked.',
       examples: [`${client.commandPrefix}lockdown`],
       guildOnly: true,
     });
@@ -19,6 +19,13 @@ module.exports = class LockdownCommand extends Command {
 
   async run(message) {
     message.say('Initiating Server Lockdown... All public channels will be locked until you run `c!unlock`');
+
+    let guildMemberRole;
+        if (message.guild.id === '501501905508237312'){
+          guildMemberRole = message.guild.roles.cache.get("501504002853306388");
+        } else {
+          guildMemberRole = message.guild.roles.cache.find(role => role.name === "Guild Member");
+        }
     
     let newsChannel;
     if (message.guild.id === '501501905508237312'){
@@ -28,7 +35,7 @@ module.exports = class LockdownCommand extends Command {
     }
 
     if (newsChannel) {
-      newsChannel.send(`@here ${message.author.tag} has initiated a server lockdown. You are not muted but will not be able to talk till a server admin does c!unlock`);
+      newsChannel.send(`**Attention @here,** \n<@${message.author.id}> has **initiated** a _server lockdown_. \nYou are **not muted**, but will not be able to talk till a server admin does \`c!unlock\``);
     }
 
     for (const categoryName in channels) {
@@ -44,25 +51,27 @@ module.exports = class LockdownCommand extends Command {
 
         if (!channel) {
           console.log(`Channel ${channelProperties.name} wasn't found`);
+        } else if(channelProperties.membersOnly) {
+          channel.updateOverwrite(guildMemberRole, { SEND_MESSAGES: false, ADD_REACTIONS: false});
         } else if(channelProperties.public) {
             switch(categoryName){
               case "UPON_JOINING":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
               case "IMPORTANT":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
               case "COMMUNITY":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
               case "MISC":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
               case "VOICE":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
               case "EVENTS":
-                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false });
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
             }
           }

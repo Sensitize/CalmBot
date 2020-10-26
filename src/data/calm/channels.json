@@ -142,6 +142,20 @@
       "public": true
     }
   },
+  "GUILD_ONLY": {      
+    "INACTIVITY": {
+      "name": "inactivity",
+      "id": "518507972356210688",
+      "public": false,
+      "membersOnly": true
+    },
+    "GUILD_ONLY": {
+      "name" : "guild-only",
+      "id": "568264444090515457",
+      "public": false,
+      "membersOnly": true 
+    }
+  },
   "VOICE": {
     "NO_MIC": {
       "name": "no-mic",
@@ -163,12 +177,14 @@
     "SMP_CHAT": {
       "name": "smp-chat",
       "id": "750522550513041448",
-      "public": true
+      "public": true,
+      "membersOnly": true 
     },
     "IGNS": {
       "name": "igns",
       "id": "751114136951455814",
-      "public": true
+      "public": true,
+      "membersOnly": true 
     }
   },
   "EVENTS": {

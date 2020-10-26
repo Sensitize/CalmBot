@@ -7,7 +7,7 @@ const { CommandoClient } = require('discord.js-commando');
 
 const client = new CommandoClient({
   commandPrefix: 'c!',
-  owner: ['438057670042320896', '272172704243908609'],
+  owner: ['438057670042320896', '234576713005137920'],
 });
 
 const evtFiles = fs.readdirSync(path.join(__dirname, 'events'));
