@@ -26,7 +26,7 @@ bot.on('ready', () => {
               .then((channel) => {
                 console.log(`Created channel: ${channel.name}`);
 
-                channel.send('first');
+                // channel.send('first');
 
                 channel.setParent(category.id)
                   .then(() => console.log(`Added ${channel.name} to ${category.name}`))

@@ -35,7 +35,7 @@ module.exports = class LockdownCommand extends Command {
     }
 
     if (newsChannel) {
-      newsChannel.send(`**Attention @here,** \n<@${message.author.id}> has **initiated** a _server lockdown_. \nYou are **not muted**, but will not be able to talk till a server admin does \`c!unlock\``);
+      newsChannel.send(`**Attention,** \n<@${message.author.id}> has **initiated** a _server lockdown_. \nYou are **not muted**, but will not be able to talk till a server admin does \`c!unlock\``);
     }
 
     for (const categoryName in channels) {

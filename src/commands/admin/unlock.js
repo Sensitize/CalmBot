@@ -35,7 +35,7 @@ module.exports = class UnlockCommand extends Command {
     }
 
     if (newsChannel) {
-      newsChannel.send(`**Attention @here,** \n<@${message.author.id}> has **unlocked** the server! \nYou are **now free to chat**!`);
+      newsChannel.send(`**Attention,** \n<@${message.author.id}> has **unlocked** the server! \nYou are **now free to chat**!`);
     }
 
     for (const categoryName in channels) {
