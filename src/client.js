@@ -34,6 +34,7 @@ client.registry
     ['info', 'Info Commands'],
     ['admin', 'Admin Commands'],
   ])
+  .registerDefaultCommands({'help': true, 'prefix': true, 'eval': false, 'unknownCommand': false, 'commandState': false})
   .registerCommandsIn({
     filter: /^([^.].*)\.js$/,
     dirname: path.join(__dirname, 'commands'),
