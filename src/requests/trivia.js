@@ -28,7 +28,7 @@ module.exports = async function trivia(difficulty, cb) {
   request({ json: true, url }, (err, res, body) => {
     if (err) {
       cb(err, null);
-    } else if (!body?.results[0]) {
+    } else if (!body.results[0]) {
       cb('API error', null);
     } else {
       const result = body.results[0];

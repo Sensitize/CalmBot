@@ -40,7 +40,7 @@ module.exports = class LinkCommand extends Command {
     getPlayer(ign, (err, player) => {
       if (err) {
         message.channel.send(err);
-      } else if (player?.socialMedia?.links?.DISCORD !== message.author.tag) {
+      } else if (player.socialMedia.links.DISCORD !== message.author.tag) {
         message.channel.send('link discord to hypixel');
       } else {
         // goes through api to find the correct rank
@@ -82,11 +82,11 @@ module.exports = class LinkCommand extends Command {
 
         // gets bedwars prestige
         const BEDWARS_EXP_PER_PRESTIGE = 489000;
-        const experience = player.stats?.Bedwars?.Experience;
+        const experience = player.stats.Bedwars.Experience;
         const bwPrestige = Math.floor(experience / BEDWARS_EXP_PER_PRESTIGE);
 
         // gets sw Level
-        const swLevel = Math.floor(getSwLevel(player?.stats?.SkyWars?.skywars_experience));
+        const swLevel = Math.floor(getSwLevel(player.stats.SkyWars.skywars_experience));
         
         // applies the rank role
         if (rank === 'ADMIN') {
