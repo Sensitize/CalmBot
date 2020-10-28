@@ -134,7 +134,7 @@
     "SUGGESTIONS": {
       "name": "suggestions",
       "id": "613404883965444098",
-      "public": true
+      "public": false
     },
     "EMOTE_SUGGESTIONS": {
       "name": "emote-suggestions",
