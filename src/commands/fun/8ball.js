@@ -1,5 +1,5 @@
 const { Command } = require('discord.js-commando');
-const randomFact = require('../../requests/fact.js');
+const { MessageEmbed } = require('discord.js')
 
 const responses = [
     "It is certain",
@@ -24,7 +24,7 @@ const responses = [
     "Very doubtful"
 ];
 
-module.exports = class FactCommand extends Command {
+module.exports = class EightBallCommand extends Command {
   constructor(client) {
     super(client, {
       name: '8ball',
@@ -43,6 +43,9 @@ module.exports = class FactCommand extends Command {
   }
 
   run(message) {
-        message.channel.send(responses[Math.floor((Math.random() * responses.length) + 0)])
+      const _8ball = new MessageEmbed()
+      .setTitle(`🎱 ${responses[Math.floor((Math.random() * responses.length) + 0)]}`)
+      .setColor("#007FFF");
+        message.channel.send(_8ball);
     }
 };
