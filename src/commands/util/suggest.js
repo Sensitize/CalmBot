@@ -46,12 +46,18 @@ module.exports = class SuggestCommand extends Command {
     .setDescription(suggestion)
     .setTimestamp();
 
-    suggestionChannel.send({embed: suggestionEmbed}).then(sentEmbed => {
+    try{
+        suggestionChannel.send({embed: suggestionEmbed}).then(sentEmbed => {
         sentEmbed.react(firstReaction);
         sentEmbed.react(secondReaction);
-    });
+      });
+    } catch{
+      message.channel.send("Uh oh! We could not find a channel to put the suggestion in!");
+      return;
+    }
+    
 
-    message.reply("thanks for the suggestion! \n**Check it out: <#" + suggestionChannel.id + ">**");
+    message.channel.send("Thanks for the suggestion! \n**Check it out: <#" + suggestionChannel.id + ">**");
 
   }
 };

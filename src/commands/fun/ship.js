@@ -25,6 +25,11 @@ module.exports = class ShipCommand extends Command {
   }
 
   async run(message, { person1, person2 }) {
+
+
+    message.channel.send("This command is disabled, sorry!");
+    return;
+
     let combined = '';
     if (parseInt(person1.discriminator, 10) > parseInt(person2.discriminator, 10)) {
       combined = person1.username + person2.username;
