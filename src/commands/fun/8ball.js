@@ -30,7 +30,7 @@ module.exports = class EightBallCommand extends Command {
       name: '8ball',
       group: 'fun',
       memberName: '8ball',
-      description: '8ball Command',
+      description: 'Ask the Magic 8Ball a question',
       examples: [`${client.commandPrefix}8ball`],
       args: [
         {
