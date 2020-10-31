@@ -24,6 +24,11 @@ module.exports = class LinkCommand extends Command {
   }
 
   async run(message, { ign }) {
+
+
+    message.channel.send("Sorry but this command is currently to unstable to be in production. Maybe try again later!");
+    return;
+
     function getSwLevel(xp) {
       const xps = [0, 20, 70, 150, 250, 500, 1000, 2000, 3500, 6000, 10000, 15000];
       if (xp >= 15000) {
@@ -41,7 +46,7 @@ module.exports = class LinkCommand extends Command {
       if (err) {
         message.channel.send(err);
       } else if (player.socialMedia.links.DISCORD !== message.author.tag) {
-        message.channel.send('link discord to hypixel');
+        message.channel.send('Please link your discord to hypixel');
       } else {
         // goes through api to find the correct rank
         let rank = '';
