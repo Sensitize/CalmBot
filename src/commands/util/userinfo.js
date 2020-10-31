@@ -58,7 +58,6 @@ module.exports = class UserInfoCommand extends Command {
                 .addField("User ID", user.id, true)
                 .addField("Nickname", `${user.displayName}`, true)
                 .addField("Bot", `${userCached.bot ? bot = 'A bot' : bot = 'Not a bot'}`, true)
-                .addField("Status", `${status[userCached.presence.status]}`, true)
                 .addField("Playing", `🎮 ${user.presence.game || 'Not Playing'}`, true)
                 .addField("Flags", `${cachedUserFlags.length ? cachedUserFlags.map(flag => flags[flag]).join(" **|** ") : 'None'}`)
                 .addField("Roles", `${user.roles.cache.filter(r => r.id !== message.guild.id).map(roles => `\`${roles.name}\``).join(" **|** ") || "No Roles!"}`, true)
