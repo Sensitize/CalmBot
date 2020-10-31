@@ -9,18 +9,18 @@ module.exports = class ShipCommand extends Command {
       memberName: 'ship',
       description: 'Returns a compatability percentage for two players!',
       examples: [`${client.commandPrefix}ship User1 User2`],
-      args: [
-        {
-          key: 'person1',
-          prompt: 'Whats the name of a person you wanna ship',
-          type: 'user',
-        },
-        {
-          key: 'person2',
-          prompt: 'Whats the name of another person you wanna ship',
-          type: 'user',
-        },
-      ],
+//       args: [
+//         {
+//           key: 'person1',
+//           prompt: 'Whats the name of a person you wanna ship',
+//           type: 'user',
+//         },
+//         {
+//           key: 'person2',
+//           prompt: 'Whats the name of another person you wanna ship',
+//           type: 'user',
+//         },
+//       ],
     });
   }
 
