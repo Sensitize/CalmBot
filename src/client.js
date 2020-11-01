@@ -7,6 +7,7 @@ const { CommandoClient } = require('discord.js-commando');
 
 const client = new CommandoClient({
   commandPrefix: 'c!',
+  disableMentions: "everyone",
   owner: ['438057670042320896', '234576713005137920'],
 });
 
