@@ -63,6 +63,33 @@
       "public": false
     }
   },
+  "SUGGESTIONS": {
+    "SUGGESTION_DISCUSSION": {
+      "name": "suggestion-discussion",
+      "id": "772576367190999050",
+      "public": true
+    },
+    "SUGGESTIONS": {
+      "name": "suggestions",
+      "id": "770049673657843732",
+      "public": false
+    },
+    "EMOTE_SUGGESTIONS": {
+      "name": "emote-suggestions",
+      "id": "627304676957618195",
+      "public": true
+    },
+    "MOVIE_SUGGESTIONS": {
+      "name": "movie-suggestions",
+      "id": "713917298674499646",
+      "public": true
+    },
+    "CHALLENGE_SUGGESTIONS": {
+      "name": "challenge-suggestions",
+      "id": "684861975028826132",
+      "public": false
+    }
+  },
   "COMMUNITY": {
     "STARBOARD": {
       "name": "starboard",
@@ -130,16 +157,6 @@
       "name": "introductions",
       "id": "765031417301827585",
       "public": true
-    },
-    "SUGGESTIONS": {
-      "name": "suggestions",
-      "id": "770049673657843732",
-      "public": false
-    },
-    "EMOTE_SUGGESTIONS": {
-      "name": "emote-suggestions",
-      "id": "627304676957618195",
-      "public": true
     }
   },
   "GUILD_ONLY": {      
@@ -196,11 +213,6 @@
     "EVENTS_CHAT": {
       "name": "events-chat",
       "id": "509497203761479710",
-      "public": true
-    },
-    "MOVIE_SUGGESTIONS": {
-      "name": "movie-suggestions",
-      "id": "713917298674499646",
       "public": true
     },
     "MOVIE_NIGHT": {
