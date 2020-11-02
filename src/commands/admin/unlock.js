@@ -64,6 +64,9 @@ module.exports = class UnlockCommand extends Command {
               case "COMMUNITY":
                 channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: null, ADD_REACTIONS: null });
                 break;
+                case "SUGGESTIONS":
+                  channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: null, ADD_REACTIONS: false});
+                  break;
               case "MISC":
                 channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: null, ADD_REACTIONS: null });
                 break;
