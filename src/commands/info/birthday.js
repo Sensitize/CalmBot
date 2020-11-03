@@ -5,6 +5,7 @@ module.exports = class BirthdayCommand extends Command {
   constructor(client) {
     super(client, {
       name: 'birthday',
+      aliases: ['birthdays'],
       group: 'info',
       memberName: 'birthday',
       description: 'Prints information on how to get the birthday nerd role in the discord!',
