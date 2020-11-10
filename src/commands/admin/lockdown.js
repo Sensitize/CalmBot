@@ -61,6 +61,9 @@ module.exports = class LockdownCommand extends Command {
               case "IMPORTANT":
                 channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;
+              case "SUGGESTIONS":
+                channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
+                break;
               case "COMMUNITY":
                 channel.updateOverwrite(channel.guild.roles.everyone, { SEND_MESSAGES: false, ADD_REACTIONS: false});
                 break;

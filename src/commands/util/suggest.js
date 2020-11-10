@@ -27,7 +27,8 @@ module.exports = class SuggestCommand extends Command {
   
   async run(message, { suggestion }) {
 
-    let suggestionChannel, firstReaction, secondReaction;;
+    let suggestionChannel, firstReaction, secondReaction, thirdReaction;
+    thirdReaction = '🤷';
     if (message.guild.id === '501501905508237312'){
       suggestionChannel = await message.guild.channels.cache.find((chan) => chan.id === channels.MISC.SUGGESTIONS.id);
       firstReaction = '615239771723137026';     //  https://cdn.discordapp.com/emojis/615239771723137026.png?v=1
@@ -46,12 +47,19 @@ module.exports = class SuggestCommand extends Command {
     .setDescription(suggestion)
     .setTimestamp();
 
-    suggestionChannel.send({embed: suggestionEmbed}).then(sentEmbed => {
+    try{
+        suggestionChannel.send({embed: suggestionEmbed}).then(sentEmbed => {
         sentEmbed.react(firstReaction);
         sentEmbed.react(secondReaction);
-    });
+        sentEmbed.react(thirdReaction);
+      });
+    } catch{
+      message.channel.send("Uh oh! We could not find a channel to put the suggestion in!");
+      return;
+    }
+    
 
-    message.reply("thanks for the suggestion! \n**Check it out: <#" + suggestionChannel.id + ">**");
+    message.channel.send("Thanks for the suggestion! \n**Check it out: <#" + suggestionChannel.id + ">**");
 
   }
 };
