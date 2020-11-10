@@ -13,7 +13,7 @@ module.exports = class AbortCommand extends Command {
   }
 
   hasPermission(message) {
-    return message.member.hasPermission('ADMINISTRATOR', { checkOwner: true });
+    return message.member.hasPermission('ADMINISTRATOR', { checkOwner: false });
   }
 
   async run(message) {
