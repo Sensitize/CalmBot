@@ -30,11 +30,11 @@ module.exports = class SuggestCommand extends Command {
     let suggestionChannel, firstReaction, secondReaction, thirdReaction;
     thirdReaction = '🤷';
     if (message.guild.id === '501501905508237312'){
-      suggestionChannel = await message.guild.channels.cache.find((chan) => chan.id === channels.MISC.SUGGESTIONS.id);
+      suggestionChannel = await message.guild.channels.cache.find((chan) => chan.id === channels.SUGGESTIONS.SUGGESTIONS.id);
       firstReaction = '615239771723137026';     //  https://cdn.discordapp.com/emojis/615239771723137026.png?v=1
       secondReaction = '615239802127777817';    // https://cdn.discordapp.com/emojis/615239802127777817.png?v=1
     } else {
-      suggestionChannel = await message.guild.channels.cache.find((chan) => chan.name === channels.MISC.SUGGESTIONS.name);
+      suggestionChannel = await message.guild.channels.cache.find((chan) => chan.name === channels.SUGGESTIONS.SUGGESTIONS.name);
       firstReaction = '✅';
       secondReaction = '❎';
     }
