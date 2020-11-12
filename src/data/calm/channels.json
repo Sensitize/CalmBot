@@ -77,7 +77,7 @@
     "EMOTE_SUGGESTIONS": {
       "name": "emote-suggestions",
       "id": "627304676957618195",
-      "public": true
+      "public": false
     },
     "MOVIE_SUGGESTIONS": {
       "name": "movie-suggestions",
